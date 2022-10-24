@@ -1,0 +1,55 @@
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<nav class="navbar navbar-expand-lg bg-light container-fluid">
+  <div class="col-12 bg-success text-white fa">
+    <a class="navbar-brand col-12 text-center">Gabriel Retamozo Vargas</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse col-12 content-fluid" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 col-12">
+        <li class="nav-item col-4 text-center">
+          <a class="nav-link text-white" href="/employee">Empleados</a>
+        </li>
+        <li class="nav-item col-4 text-center">
+          <a class="nav-link text-white" href="/producto">Productos</a>
+        </li>
+        <li class="nav-item col-4 text-center">
+          <a class="nav-link text-white" href="/cliente">Clientes</a>
+        </li>
+    </div>
+  </div>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+
+<h3>{{viewTitle}}</h3>
+
+<form action="/cliente" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{cliente._id}}">
+    <div class="form-group">
+        <label>Nombre del cliente</label>
+        <input type="text" class="form-control" name="nombreCliente" placeholder="Nombre del cliente" value="{{cliente.nombreCliente}}">
+        <div class="text-danger">
+            {{cliente.nombreClienteError}}</div>
+    </div>
+    <div class="form-group">
+        <label>RUC</label>
+        <input type="number" class="form-control" name="ruc" placeholder="ruc del cliente" value="{{cliente.ruc}}">
+        <div class="text-danger">
+            {{cliente.rucError}}</div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Razon social</label>
+            <input type="text" class="form-control" name="razonSocial" placeholder="Razon social" value="{{cliente.razonSocial}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Monto de la venta</label>
+            <input type="number" class="form-control" name="montoVenta" placeholder="monto de la venta" value="{{cliente.montoVenta}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-success"><i class="fa fa-database"></i> Guardar</button>
+        <a class="btn btn-info" href="/cliente/listCliente"><i class="fa fa-list-alt"></i> Mostrar Lista de Clientes</a>
+    </div>
+</form>

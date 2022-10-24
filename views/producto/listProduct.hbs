@@ -1,0 +1,26 @@
+<h3><a class="btn btn-success" href="/producto"><i class="fa fa-plus"></i> Crear nuevo producto</a class="text-align-center"> Lista de productos</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre de producto</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Categoria</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each listProduct}}
+        <tr>
+            <td>{{this.nombreProducto}}</td>
+            <td>{{this.precio}}</td>
+            <td>{{this.stock}}</td>
+            <td>{{this.categoria}}</td>
+            <td>
+                <a href="/producto/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/producto/delete/{{this._id}}" onclick="return confirm('Esta seguro que desea eliminar este producto?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

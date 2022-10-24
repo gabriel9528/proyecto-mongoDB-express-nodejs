@@ -1,0 +1,26 @@
+<h3><a class="btn btn-success" href="/cliente"><i class="fa fa-plus"></i> Crear nuevo cliente</a class="text-align-center"> Lista de clientes</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre del cliente</th>
+            <th>RUC</th>
+            <th>Razon social</th>
+            <th>Monto de venta</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each listCliente}}
+        <tr>
+            <td>{{this.nombreCliente}}</td>
+            <td>{{this.ruc}}</td>
+            <td>{{this.razonSocial}}</td>
+            <td>{{this.montoVenta}}</td>
+            <td>
+                <a href="/cliente/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/cliente/delete/{{this._id}}" onclick="return confirm('Esta seguro que desea eliminar este cliente?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
